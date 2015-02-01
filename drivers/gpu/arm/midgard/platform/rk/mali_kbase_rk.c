@@ -466,7 +466,7 @@ static int kbase_rk_regulator_init(struct kbase_device *kbdev)
 	struct kbase_rk *kbase_rk = kbdev->platform_context;
 	int ret;
 
-	kbase_rk->regulator = devm_regulator_get(kbdev->dev, "vdd_gpu");
+	kbase_rk->regulator = devm_regulator_get(kbdev->dev, "vdd");
 	if (IS_ERR(kbase_rk->regulator)) {
 		ret = PTR_ERR(kbase_rk->regulator);
 		dev_err(kbdev->dev,
