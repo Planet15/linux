@@ -80,6 +80,19 @@ config STMMAC_PCI
 
 	  If unsure, say N.
 
+config DWMAC_ROCKCHIP
+	bool "Rockchip GMAC support"
+	depends on STMMAC_PLATFORM && ARCH_ROCKCHIP
+	default y
+	---help---
+	  Support for ethernet controller on Rockchip SOCs.
+
+	  This selects Rockchip SoC glue layer support for the stmmac
+	  device driver. This driver is used on for the Rockchip series
+	  SOCs GMAC ethernet controller.
+
+	  If unsure, say N.
+
 config STMMAC_DEBUG_FS
 	bool "Enable monitoring via sysFS "
 	default n
