@@ -195,6 +195,11 @@
 	status = "ok";
 };
 
+&gpu {
+	vdd-supply = <&vdd_gpu>;
+	status = "okay";
+};
+
 
 &hdmi {
 	ddc-i2c-bus = <&i2c5>;
