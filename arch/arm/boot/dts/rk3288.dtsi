@@ -703,7 +703,7 @@
 		};
 	};
 	
-	gpu: gpu@0xffa30000 {
+	gpu: gpu@ffa30000 {
 		compatible = "arm,malit764",
 			     "arm,malit76x",
 			     "arm,malit7xx",
@@ -715,8 +715,15 @@
 		interrupt-names = "JOB", "MMU", "GPU";
 		clocks = <&cru ACLK_GPU>;
 		clock-names = "aclk_gpu";
-		assigned-clocks = <&cru ACLK_GPU>;
-		assigned-clock-rates = <100000000>;
+		operating-points = <
+		/* KHz uV */
+		100000 950000
+		200000 950000
+		300000 1000000
+		400000 1100000
+		/* 500000 1200000 - See crosbug.com/p/33857 */
+		600000 1250000
+		>;
 		status = "disabled";
 	};
 

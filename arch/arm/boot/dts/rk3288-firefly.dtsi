@@ -195,6 +195,10 @@
 	status = "ok";
 };
 
+&gpu {
+	status = "okay";
+};
+
 
 &hdmi {
 	ddc-i2c-bus = <&i2c5>;
